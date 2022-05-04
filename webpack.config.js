@@ -22,6 +22,24 @@ module.exports = {
                         loader: 'css-loader'
                     }
                 ]
+            },
+            {
+                test: /\.(png|jpg)/,
+                // webpack 5の場合、asset modulesを代わりに使う
+                // type: 'asset/resource',
+                // generator: {
+                //     filename: 'images/[name][ext]',
+                // },
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            esModule: false,
+                            name: 'images/[name].[ext]',
+                        }
+                    }
+
+                ]
             }
         ]
     },
