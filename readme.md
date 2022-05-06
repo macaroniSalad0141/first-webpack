@@ -9,3 +9,10 @@ npx webpack
 npx webpack --mode development  
 
 webpack.config.js内のloaderは下から適用される
+
+ローカルサーバで立ち上げる場合、以下コマンドを実行する
+npx webpack-dev-server
+http://localhost:8082/
+
+can i use <タグ名> で検索すると、適応してるブラウザなどがわかるサイトのリンクが出る
+https://caniuse.com
