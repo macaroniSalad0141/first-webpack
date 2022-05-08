@@ -5,6 +5,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const { Template } = require('webpack');
 
 module.exports = {
+    // mode: 'development',
+    devtool: 'source-map',
     entry: './src/javascripts/index.js',
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -12,6 +14,24 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.js/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: [
+                                // ['@babel/preset-env', { 'targets': '> 5%, not dead' }],
+                                ['@babel/preset-env', { 'targets': {
+                                    'chrome': '58',
+                                    'ie': '11' 
+                                }}],
+                            ],
+                        }
+                    }
+                ]
+            },
             {
                 test: /\.(css|scss|sass)$/,
                 use: [
@@ -28,7 +48,7 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(png|jpg)/,
+                test: /\.(png|jpg|jpeg)/,
                 // webpack 5の場合、asset modulesを代わりに使う
                 // type: 'asset/resource',
                 // generator: {
@@ -41,7 +61,16 @@ module.exports = {
                             esModule: false,
                             name: 'images/[name].[ext]',
                         }
-                    }
+                    },
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            mozjpeg: {
+                                progressive: true,
+                                quality: 65,
+                            }
+                        }
+                    },
 
                 ]
             },
