@@ -23,3 +23,6 @@ https://www.taniarascia.com/es6-syntax-and-feature-overview/
 開発モードからmain.jsを見てみると、元々はアロー関数などが使われているが、babel設定後は通常のfunctionに変更されることがわかる。
 
 devtoolの設定によって出力されるソースを変更できる。見やすさビルドの速さのトレードオフ
+
+create-react-appなどを使ってReactを使ってもいいが、webpackを通して独自にReactを扱うこともできる  
+練習のため、ReactとVueどちらも使えるようにpackageのインストールなどを行なっている
