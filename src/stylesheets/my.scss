@@ -1,14 +1,28 @@
 @use './footer.scss';
+@use './menu.scss';
 
 @mixin set-margin($direction, $value) {
     margin-#{$direction}: $value;
 }
 
-h1 {
-    color: blue;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
 }
 
-$primary-color: green;
+h1 {
+    color: blue;
+    font-size: 2em;
+}
+.container {
+    width: 980px;
+    min-width: 100%;
+    margin: 0 auto;
+    padding: 0.5em;
+}
+
+$primary-color: rgb(86, 206, 86);
 
 p {
     background-color: $primary-color;
@@ -25,4 +39,22 @@ p {
         font-size: 32px;
     }
     @include set-margin(right, 16px);
+}
+
+.main-image {
+    background-image: url('../images/thumbnail.jpg');
+    height: 600px;
+    border-radius: 2em;
+    margin: 1em 0;
+}
+
+$icon-size: 64px;
+.icon {
+  width: $icon-size;
+  height: $icon-size;
+  border-radius: calc($icon-size / 2);
+  padding: 4px;
+  position: absolute;
+  top: 1em;
+  left: 1em;
 }

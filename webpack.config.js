@@ -80,6 +80,7 @@ module.exports = {
                         options: {
                             esModule: false,
                             name: 'images/[name].[ext]',
+                            publicPath: '/',
                         }
                     },
                     {
