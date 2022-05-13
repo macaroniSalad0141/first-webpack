@@ -7,7 +7,7 @@ const App = (props) => {
   return (
     <div style={({ color: '#000' })}>
       Hello, React App!
-      <Alert message='Success!' />
+      <Alert message='Success!!' />
     </div>
   );
 }

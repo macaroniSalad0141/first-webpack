@@ -26,3 +26,9 @@ devtoolの設定によって出力されるソースを変更できる。見や�
 
 create-react-appなどを使ってReactを使ってもいいが、webpackを通して独自にReactを扱うこともできる  
 練習のため、ReactとVueどちらも使えるようにpackageのインストールなどを行なっている
+
+Netlify
+GitHubから静的ウェブサイトを簡単にデプロイできる
+
+webpackでビルドする時にファイル名を変更することで、強制的にキャッシュをクリアできる
+webpack5ならcontenthash
